@@ -1,0 +1,9 @@
+﻿Name: Content Output Cache
+AntiForgery: enabled
+Author: Mdameer
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.8
+Description: Provides an OutputCachePart for use with content types. Attach this part to types for which you want to control output caching.
+Category: Performance
+Dependencies: Orchard.OutputCache

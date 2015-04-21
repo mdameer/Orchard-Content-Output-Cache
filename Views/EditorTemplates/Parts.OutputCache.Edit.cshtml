@@ -1,0 +1,46 @@
+﻿@model Mdameer.ContentOutputCache.Models.OutputCachePart
+
+<fieldset>
+        @Html.EditorFor(m => m.EnableOverride)
+        <label class="forcheckbox" for="@Html.FieldIdFor(m => m.EnableOverride)">@T("Enable Override for cache settings")</label>
+    <div data-controllerid="@Html.FieldIdFor(m => m.EnableOverride)" style="padding:10px 20px;">
+        <div>
+            @Html.EditorFor(m => m.EnableCache)
+            <label class="forcheckbox" for="@Html.FieldIdFor( m => m.EnableCache)">@T("Enable Cache for this item")</label>
+        </div>
+        <div>
+            <label for="@Html.FieldIdFor( m => m.CacheDuration)">@T("Cache Duration (Seconds)")</label>
+            @Html.EditorFor(m => m.CacheDuration)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.VaryByQueryStringParameters, T("Vary by Query String Parameters"))
+            @Html.TextBoxFor(m => m.VaryByQueryStringParameters, new { @class = "text medium" })
+            <span class="hint">@T("When defined, using comma separated values, sets caching to vary by the specified query string parameters.")</span>
+        </div>
+        <div>
+            @Html.LabelFor(m => m.VaryByRequestHeaders, T("Vary by Request Headers"))
+            @Html.TextBoxFor(m => m.VaryByRequestHeaders, new { @class = "text medium" })
+            <span class="hint">@T("When defined, using comma separated values, sets caching to vary by the specified request headers.")</span>
+        </div>
+        <div>
+            @Html.EditorFor(m => m.VaryByCulture)
+            <label class="forcheckbox" for="@Html.FieldIdFor(m => m.VaryByCulture)">@T("Vary by culture")</label>
+            <span class="hint">@T("When checked, caching will vary by request culture. For better performance, leave this unchecked if your site uses only one culture.")</span>
+</div>
+        <div>
+            @Html.EditorFor(m => m.VaryByAuthenticationState)
+            <label class="forcheckbox" for="@Html.FieldIdFor(m => m.VaryByAuthenticationState)">@T("Vary by authentication state")</label>
+            <span class="hint">@T("When checked caching will vary by whether the user is authenticated or not. This is useful if content is rendered differently for authenticated vs. anonymous users.")</span>
+</div>
+        <div>
+            @Html.EditorFor(m => m.VaryByUser)
+            <label class="forcheckbox" for="@Html.FieldIdFor(m => m.VaryByUser)">@T("Vary by user")</label>
+            <span class="hint">@T("When checked caching will vary by the user name. This is useful if content is rendered differently for every user.")</span>
+        </div>
+        <div>
+            @Html.EditorFor(m => m.VaryByUrl)
+            <label class="forcheckbox" for="@Html.FieldIdFor(m => m.VaryByUrl)">@T("Vary by Url")</label>
+            <span class="hint">@T("When checked caching will vary by requested url.")</span>
+</div>
+    </div>
+</fieldset>
