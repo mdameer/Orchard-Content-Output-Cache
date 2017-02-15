@@ -51,7 +51,7 @@ namespace Mdameer.ContentOutputCache.Filters
             if (filterContext.Controller is Orchard.OutputCache.Controllers.AdminController || filterContext.Controller is Orchard.OutputCache.Controllers.StatisticsController)
             {
                 filterContext.Cancel = true;
-                Services.Notifier.Add(Orchard.UI.Notify.NotifyType.Information, T("The orchard default Output Cache filter has been disabled, becuase the content output cache module is active."));
+                Services.Notifier.Add(Orchard.UI.Notify.NotifyType.Information, T("The orchard default Output Cache filter has been disabled, because the content output cache module is active."));
             }
         }
     }
